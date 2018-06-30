@@ -1,0 +1,33 @@
+{
+  "name": "videos-page",
+  "version": "1.0.0",
+  "description": "List of videos on youtube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reigun11/build-page.git"
+  },
+  "author": "richard.yukio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reigun11/build-page/issues"
+  },
+  "homepage": "https://github.com/reigun11/build-page#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "browser-sync": "^2.24.5",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-rename": "^1.3.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0"
+  }
+}
