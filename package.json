@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/reigun11/build-page#readme",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.6",
+    "bootstrap": "^4.1.1",
     "browser-sync": "^2.24.5",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "jquery": "^3.3.1",
+    "popper": "^1.0.1",
+    "popper.js": "^1.14.3"
   },
   "devDependencies": {
     "gulp-autoprefixer": "^5.0.0",
