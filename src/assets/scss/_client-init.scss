@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Titillium+Web:300,300i,400,400i,600,600i,700');
+@import url('https://i.icomoon.io/public/temp/5647c10d72/UntitledProject/style.css');
+
+$font-title:        Titillium Web, sans-serif;
+$font-standart:     lato, sans-serif;
+
+$client-color:      #a8395c;
+$client-color-ng:   #fff;
+$text-color:        #4c4c4c;
+$text-color-light:  #797979;
+$link-color:        #0d6db7;
+$active-focus:      rgba(0, 0, 0, 0.1);
+
+$radius:            4px;
+
+.radius {
+  border-radius: $radius;
+}
+
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}
+
+@mixin box-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $color: $default) {
+  box-shadow: $x-axis $y-axis $blur $color;
+}

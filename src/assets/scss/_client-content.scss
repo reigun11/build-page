@@ -1,0 +1,92 @@
+#video{
+	.video {
+		position: relative;
+		padding-bottom: 51.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
+
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.wrapper{
+		border: 1px solid #c8c8c8;
+		padding: 25px;
+		@include box-shadow(0, 2px, 2px, #ccc)
+		margin: 20px 0;
+	}
+
+}
+
+.twrapper {
+text-transform: uppercase;
+background: #ececec;
+color: #555;
+cursor: help;
+font-family: "Gill Sans", Impact, sans-serif;
+font-size: 20px;
+margin: 100px 75px 10px 75px;
+padding: 15px 20px;
+position: relative;
+text-align: center;
+width: 200px;
+-webkit-transform: translateZ(0);
+/* webkit flicker fix */
+-webkit-font-smoothing: antialiased;
+/* webkit text rendering fix */
+}
+.twrapper .tooltip {
+	background: #1496bb;
+	bottom: 100%;
+	color: #fff;
+	display: block;
+	left: -25px;
+	margin-bottom: 15px;
+	opacity: 0;
+	padding: 20px;
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	@include box-shadow(0, 2px, 2px, #ccc)
+	@include transition (all, 0.5s, ease)
+}
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.twrapper .tooltip:before {
+	bottom: -20px;
+	content: " ";
+	display: block;
+	height: 20px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	@include transition (all, 0.5s, ease)
+
+}
+/* CSS Triangles - see Trevor's post */
+.twrapper .tooltip:after {
+	border-left: solid transparent 10px;
+	border-right: solid transparent 10px;
+	border-top: solid #1496bb 10px;
+	bottom: -10px;
+	content: " ";
+	height: 0;
+	left: 50%;
+	margin-left: -13px;
+	position: absolute;
+	width: 0;
+}
+.twrapper:hover .tooltip {
+	opacity: 1;
+	pointer-events: auto;
+}
+/* IE can just show/hide with no transition */
+.lte8 .twrapper .tooltip {
+	display: none;
+}
+.lte8 .twrapper:hover .tooltip {
+	display: block;
+}

@@ -1,4 +1,19 @@
 /* Arquivo SCSS Principal */
 // Base
+@import "client-init";
 @import "nav";
+@import "client-content";
 
+a:hover{
+  opacity: 0.9;
+}
+
+h2{
+  font-size: 2.4em;
+  line-height: 1.8em;
+}
+h1, h2, h3, h4{
+  font-family: $font-title;
+  color: $client-color;
+  margin: 20px 0;
+}

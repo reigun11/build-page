@@ -1,0 +1,76 @@
+#nav{
+	font-family: $font-title;
+	background-color: $client-color;
+	nav{
+		padding-left: 0;
+
+		h1{
+			font-size: 1em;
+			line-height: 44px;
+			font-weight: 600;
+			margin: 0;
+			color: $client-color-ng;
+		}
+		img{
+			max-height: 44px;
+			float: left;
+		}
+
+		li {
+			a:hover{
+				@include transition (all, 0.5s, ease)
+			}
+			.dropdown-menu{
+				position: absolute;
+
+				.dropdown-item{
+					min-width: 250px;
+					font-weight: 600;
+					color: $text-color-light;
+					width: auto;
+					margin: 0 5px;
+					padding: 10px;
+					@include transition (all, 0.5s, ease)
+					@extend .radius;
+
+					&:hover{
+						background: $active-focus;
+					}
+				}
+				i {
+					color: $client-color;
+					font-size: 1.2em;
+				}
+			}
+
+			.arrow{
+				border-style: solid;
+				border-width: 0 8px 8px;;
+				border-color: transparent transparent white;
+				margin-top: -50px;
+				margin: -15px 15px;
+				float: right;
+			}
+			a:active{
+				background: $active-focus;
+			}
+		}
+		.search{
+			background-color: transparent;
+			color: $client-color-ng;
+			border: 1px solid $client-color;
+			z-index: 2;
+
+			&:focus{
+				background: $active-focus;
+				border-color: $client-color-ng;
+				outline: 0;
+				box-shadow: none;
+			}
+			i:before{
+				margin-left: -40px;
+				z-index: 1;
+			}
+		}
+	}
+}
