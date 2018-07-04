@@ -30,7 +30,6 @@ gulp.task('js-boot', function(cb) {
     return gulp.src(['node_modules/jquery/dist/jquery.min.js',
                      'node_modules/tether/dist/js/tether.min.js',
                      'node_modules/bootstrap/dist/js/bootstrap.min.js',
-
                      'src/assets/js/general.js'
                    ])
         .pipe(concat('scripts.js'))

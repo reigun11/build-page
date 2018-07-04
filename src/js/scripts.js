@@ -70,9 +70,6 @@ $(document).ready(function () {
                             +'</div>'
                         +'</div>'
                     '</li>'
-                    //'<li  class="item" data-key="'+videoID+'" data-titl="'+vidTitle+'" data-desc="'+vidDesc+'" data-date="'+viewDate+'" ><a target=_blank href="https://www.youtube.com/watch?v=' + videoID + '">' + vidTitle + '</a><a target=_blank  href="https://www.youtube.com/watch?v=' + videoID + '"><img src="' + vidThumb + '" class="thumbnail"></a><span class="' + viewCountId + ' views"></span><span class="date">publish date: ' + vidDate + '</span><p class="description">' + vidDesc + //'</p><iframe height="' + vidHeight + '" width ="' + vidWidth
-                    //        + '" src=\"//www.youtube.com/embed/' + videoID + '\"></iframe></li>';
-
 
                     $('#results').append(output);
 
@@ -81,12 +78,12 @@ $(document).ready(function () {
                     outputMain =
                     '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/'+videoID+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>'
                     + '<div class="wrapper">'
-                    +'<div class="box-tooltip"> <div class="tooltip">'+viewDate+'</div>  <span class="icon-clock"></span></div>'
-                    +'<div class="box-tooltip"> <div class="'+ viewCountId +' tooltip views"></div>  <span class="icon-view"></span></div>'
-                      + '<p class="title">'
-                          + vidTitle
-                      +'<p class="text-description">'
-                          +vidDesc
+                        +'<div class="box-tooltip"> <div class="tooltip">'+viewDate+'</div>  <span class="icon-clock"></span></div>'
+                        +'<div class="box-tooltip"> <div class="'+ viewCountId +' tooltip views"></div>  <span class="icon-view"></span></div>'
+                        + '<p class="title">'
+                            + vidTitle
+                          +'<p class="text-description">'
+                            +vidDesc
                     +'</div>';
 
                     //append to results list
@@ -141,11 +138,18 @@ $(document).ready(function () {
 
     //btn add + videos on page
     $('#resultsLft').on('click', '.btn', function () {
-        alert(vidCount)
         vidCount = vidCount + 10;
         getVids();
 
     });
+
+    //btn add + videos on page
+    $('#resultsVids').on('click', '.btn', function () {
+        vidCount = vidCount + 10;
+        getVids();
+
+    });
+
 
 
 });
