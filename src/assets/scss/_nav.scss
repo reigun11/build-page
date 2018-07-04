@@ -33,10 +33,12 @@
 					@include transition (all, 0.5s, ease);
 					@extend .radius;
 
-					&:hover{
+					&:hover {
 						background: $active-focus;
 					}
+
 				}
+
 				i {
 					color: $client-color;
 					font-size: 1.2em;

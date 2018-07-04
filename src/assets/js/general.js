@@ -135,11 +135,13 @@ $(document).ready(function () {
 
     });
 
+    if ($('#resultsVids').length){
+      vidCount = 12;
+    }
     //btn add + videos on page
     $('#resultsVids').on('click', '.btn', function () {
         vidCount = vidCount + 10;
         getVids();
-
     });
 
 

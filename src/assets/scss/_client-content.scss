@@ -66,16 +66,24 @@
 	}
 }
 #resultsVids{
-	#results li{
+	#results .frameborder{
+		margin: 10px;
 
-	}
-	.viewbottom{
-		position: initial;
+		.item{
+			float: left;
+
+			.viewbottom{
+				position: initial;
+			}
+		}
 	}
 }
 
 
 @media (max-width: 1200px) {
+	.container {
+		max-width: 100%;
+	}
 	#results{
 		.viewbottom{
 			position: initial!important;
