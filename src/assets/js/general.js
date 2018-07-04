@@ -36,7 +36,7 @@ $(document).ready(function () {
                 var output;
                 var outputMain;
 
-                $('#results').html('');
+                $('#results').children('.frameborder').html('');
 
                 $.each(data.items, function (i, item) {
                     console.log(item);
@@ -50,8 +50,10 @@ $(document).ready(function () {
                     var viewDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 
                     var viewCountId = "viewCount" + i;
+                    var getClass = $('#results > .frameborder').attr('data-key');
+
                     output =
-                    '<li class="item" data-key="'+videoID+'" data-titl="'+vidTitle+'" data-desc="'+vidDesc+'" data-date="'+viewDate+'" >'
+                    '<div class="item '+ getClass +'" data-key="'+videoID+'" data-titl="'+vidTitle+'" data-desc="'+vidDesc+'" data-date="'+viewDate+'" >'
                         +'<div class="media">'
                             + '<a href="#" class="pull-left"><img src="' + vidThumb + '" class="media-object"></a>'
                             + '<div class="media-body">'
@@ -59,9 +61,9 @@ $(document).ready(function () {
                                 +'<div class="viewbottom"><span class="icon-view"></span> <span class="'+ viewCountId +' views"></span> </div>'
                             +'</div>'
                         +'</div>'
-                    '</li>'
+                    +'</div>';
 
-                    $('#results').append(output);
+                    $('#results > .frameborder').prepend(output);
 
                     getViews(viewCountId);
 
@@ -103,8 +105,8 @@ $(document).ready(function () {
     }
 
     //getresult
-    $('#results').on('click', 'li', function () {
-        var id = $(this).attr('data-key');
+    $('.frameborder').on('click', '.item', function () {
+        var id = $(this).attr('data-key')
         var desc = $(this).attr('data-desc');
         var titl = $(this).attr('data-titl');
         var date = $(this).attr('data-date');
