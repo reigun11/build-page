@@ -1,0 +1,6 @@
+.wrapper{
+	border: 1px solid $element-color;
+	padding: 15px;
+	@include box-shadow(0, 2px, 2px, #ccc);
+	margin: 20px 0;
+}

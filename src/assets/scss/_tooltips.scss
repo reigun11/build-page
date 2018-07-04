@@ -1,0 +1,47 @@
+
+.box-tooltip {
+	text-transform: uppercase;
+	background: $client-color-ng;
+	color: $client-color-2;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	margin: 0 5px;
+	padding: 5px;
+	font-size: 1.4em;
+
+	&:hover .tooltip {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.tooltip {
+		background: $client-color-ng;
+		bottom: 100%;
+		color: $text-color;
+		border: 2px solid $element-color;
+		display: block;
+		left: -25px;
+		margin-bottom: 15px;
+		opacity: 0;
+		padding: 10px;
+		position: absolute;
+		width: max-content;
+		border-radius: 8px;
+		@include box-shadow(0, 2px, 2px, #ccc)
+		@include transition (all, 0.5s, ease)
+
+		&:after {
+			border-left: solid transparent 10px;
+			border-right: solid transparent 10px;
+			border-top: solid $element-color 10px;
+			bottom: -10px;
+			content: " ";
+			height: 0;
+			left: 50%;
+			margin-left: -13px;
+			position: absolute;
+			width: 0;
+		}
+	}
+}
