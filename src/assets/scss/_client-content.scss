@@ -14,48 +14,39 @@
 		}
 	}
 	.wrapper{
-		border: 1px solid #c8c8c8;
+		border: 1px solid $element-color;
 		padding: 25px;
-		@include box-shadow(0, 2px, 2px, #ccc)
+		@include box-shadow(0, 2px, 2px, #ccc);
 		margin: 20px 0;
 	}
-
 }
-
-.twrapper {
-text-transform: uppercase;
-background: #ececec;
-color: #555;
-cursor: help;
-font-family: "Gill Sans", Impact, sans-serif;
-font-size: 20px;
-margin: 100px 75px 10px 75px;
-padding: 15px 20px;
-position: relative;
-text-align: center;
-width: 200px;
--webkit-transform: translateZ(0);
-/* webkit flicker fix */
--webkit-font-smoothing: antialiased;
-/* webkit text rendering fix */
+.box-tooltip {
+	text-transform: uppercase;
+	background: $client-color-ng;
+	color: $text-color;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	margin: 0 5px;
 }
-.twrapper .tooltip {
-	background: #1496bb;
+.box-tooltip .tooltip {
+	background: $client-color-ng;
 	bottom: 100%;
-	color: #fff;
+	color: $text-color;
+	border: 2px solid $element-color;
 	display: block;
 	left: -25px;
 	margin-bottom: 15px;
 	opacity: 0;
-	padding: 20px;
-	pointer-events: none;
+	padding: 10px;
 	position: absolute;
-	width: 100%;
+	width: max-content;
+	border-radius: 8px;
 	@include box-shadow(0, 2px, 2px, #ccc)
 	@include transition (all, 0.5s, ease)
 }
 /* This bridges the gap so you can mouse into the tooltip without it disappearing */
-.twrapper .tooltip:before {
+.box-tooltip .tooltip:before {
 	bottom: -20px;
 	content: " ";
 	display: block;
@@ -67,10 +58,10 @@ width: 200px;
 
 }
 /* CSS Triangles - see Trevor's post */
-.twrapper .tooltip:after {
+.box-tooltip .tooltip:after {
 	border-left: solid transparent 10px;
 	border-right: solid transparent 10px;
-	border-top: solid #1496bb 10px;
+	border-top: solid $element-color 10px;
 	bottom: -10px;
 	content: " ";
 	height: 0;
@@ -79,14 +70,7 @@ width: 200px;
 	position: absolute;
 	width: 0;
 }
-.twrapper:hover .tooltip {
+.box-tooltip:hover .tooltip {
 	opacity: 1;
 	pointer-events: auto;
-}
-/* IE can just show/hide with no transition */
-.lte8 .twrapper .tooltip {
-	display: none;
-}
-.lte8 .twrapper:hover .tooltip {
-	display: block;
 }

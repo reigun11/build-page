@@ -43,17 +43,33 @@ $(document).ready(function () {
                     vidDesc = item.snippet.description;
                     vidThumb = item.snippet.thumbnails.medium.url;
 
+                    var date = new Date(vidDate);
+                    var viewDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+
                     var viewCountId = "viewCount" + i;
-                    output = '<li  class="item" data-key="'+videoID+'" data-titl="'+vidTitle+'" data-desc="'+vidDesc+'" data-date="'+vidDate+'" data-views="'+vidDate+'"><a target=_blank href="https://www.youtube.com/watch?v=' + videoID + '">' + vidTitle + '</a><a target=_blank  href="https://www.youtube.com/watch?v=' + videoID + '"><img src="' + vidThumb + '" class="thumbnail"></a><span id="' + viewCountId + '" class="views"></span><span class="date">publish date: ' + vidDate + '</span><p class="description">' + vidDesc + '</p><iframe height="' + vidHeight + '" width ="' + vidWidth
+                    output = '<li  class="item" data-key="'+videoID+'" data-titl="'+vidTitle+'" data-desc="'+vidDesc+'" data-date="'+viewDate+'" ><a target=_blank href="https://www.youtube.com/watch?v=' + videoID + '">' + vidTitle + '</a><a target=_blank  href="https://www.youtube.com/watch?v=' + videoID + '"><img src="' + vidThumb + '" class="thumbnail"></a><span class="' + viewCountId + ' views"></span><span class="date">publish date: ' + vidDate + '</span><p class="description">' + vidDesc + '</p><iframe height="' + vidHeight + '" width ="' + vidWidth
                         + '" src=\"//www.youtube.com/embed/' + videoID + '\"></iframe></li>';
 
 
-                    outputMain =
-                    '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+videoID+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><div class="wrapper">'+ vidTitle +'</div> <span id="' + viewCountId + '" class="views"></span>'+ vidDesc + vidDate ;
-                    //append to results list
                     $('#results').append(output);
 
                     getViews(viewCountId);
+
+                    outputMain =
+                    '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/'+videoID+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>'
+                    + '<div class="wrapper">'
+                      + '<p class="title">'
+                          + vidTitle
+                          +'<div class="box-tooltip"> <div class="'+ viewCountId +' tooltip views"></div>  <span class="icon-view"></span> views </div>'
+                          +'<div class="box-tooltip"> <div class="tooltip">'+viewDate+'</div>  <span class="icon-view"></span> date </div>'
+                      +'<p class="text-description">'
+                          +vidDesc
+                      +'</p>'
+                    +'</div>'
+                    + 'a'
+                    + 'a'
+                    + 'a' ;
+                    //append to results list
 
                     if (i == 0){
                         $('#video').append(outputMain);
@@ -73,7 +89,7 @@ $(document).ready(function () {
             },
             function (data) {
                 $.each(data.items, function (i, item) {
-                    $('#'+viewCountId).text(item.statistics.viewCount);
+                    $('.'+viewCountId).text(item.statistics.viewCount+' views');
                 })
 
 
