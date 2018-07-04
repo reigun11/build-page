@@ -2,6 +2,8 @@
 // Base
 @import "client-init";
 @import "nav";
+@import "tooltips";
+@import "wrapper";
 @import "client-content";
 
 a:hover{
@@ -16,4 +18,15 @@ h1, h2, h3, h4{
   font-family: $font-title;
   color: $client-color;
   margin: 20px 0;
+}
+.title{
+  color: $client-color;
+  font-family: $font-title;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+.btn{
+  font-family: $font-title;
+  font-weight: 600;
+  font-size: 0.9em;
 }

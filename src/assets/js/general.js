@@ -1,6 +1,7 @@
 var yourApiKey = 'AIzaSyAdPfG1S6HBLhQWnKeOmFWwybir8sLBIgk'; //Jim's Key
 
 var channelName = 'VAGAStecnologia';
+var changeconst = '';
 var vidCount = 4;
 var vidHeight = 100;
 var vidWidth = 300;
@@ -47,8 +48,18 @@ $(document).ready(function () {
                     var viewDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 
                     var viewCountId = "viewCount" + i;
-                    output = '<li  class="item" data-key="'+videoID+'" data-titl="'+vidTitle+'" data-desc="'+vidDesc+'" data-date="'+viewDate+'" ><a target=_blank href="https://www.youtube.com/watch?v=' + videoID + '">' + vidTitle + '</a><a target=_blank  href="https://www.youtube.com/watch?v=' + videoID + '"><img src="' + vidThumb + '" class="thumbnail"></a><span class="' + viewCountId + ' views"></span><span class="date">publish date: ' + vidDate + '</span><p class="description">' + vidDesc + '</p><iframe height="' + vidHeight + '" width ="' + vidWidth
-                        + '" src=\"//www.youtube.com/embed/' + videoID + '\"></iframe></li>';
+                    output =
+                    '<li class="item" data-key="'+videoID+'" data-titl="'+vidTitle+'" data-desc="'+vidDesc+'" data-date="'+viewDate+'" >'
+                        +'<div class="media">'
+                            + '<a href="#" class="pull-left"><img src="' + vidThumb + '" class="media-object"></a>'
+                            + '<div class="media-body">'
+                                +'<p class="title">'+ vidTitle +'</p>'
+                                +'<div class="viewbottom"><span class="icon-view"></span> <span class="'+ viewCountId +' views"></span> </div>'
+                            +'</div>'
+                        +'</div>'
+                    '</li>'
+                    //'<li  class="item" data-key="'+videoID+'" data-titl="'+vidTitle+'" data-desc="'+vidDesc+'" data-date="'+viewDate+'" ><a target=_blank href="https://www.youtube.com/watch?v=' + videoID + '">' + vidTitle + '</a><a target=_blank  href="https://www.youtube.com/watch?v=' + videoID + '"><img src="' + vidThumb + '" class="thumbnail"></a><span class="' + viewCountId + ' views"></span><span class="date">publish date: ' + vidDate + '</span><p class="description">' + vidDesc + //'</p><iframe height="' + vidHeight + '" width ="' + vidWidth
+                    //        + '" src=\"//www.youtube.com/embed/' + videoID + '\"></iframe></li>';
 
 
                     $('#results').append(output);
@@ -58,19 +69,15 @@ $(document).ready(function () {
                     outputMain =
                     '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/'+videoID+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>'
                     + '<div class="wrapper">'
+                    +'<div class="box-tooltip"> <div class="tooltip">'+viewDate+'</div>  <span class="icon-clock"></span></div>'
+                    +'<div class="box-tooltip"> <div class="'+ viewCountId +' tooltip views"></div>  <span class="icon-view"></span></div>'
                       + '<p class="title">'
                           + vidTitle
-                          +'<div class="box-tooltip"> <div class="'+ viewCountId +' tooltip views"></div>  <span class="icon-view"></span> views </div>'
-                          +'<div class="box-tooltip"> <div class="tooltip">'+viewDate+'</div>  <span class="icon-view"></span> date </div>'
                       +'<p class="text-description">'
                           +vidDesc
-                      +'</p>'
-                    +'</div>'
-                    + 'a'
-                    + 'a'
-                    + 'a' ;
-                    //append to results list
+                    +'</div>';
 
+                    //append to results list
                     if (i == 0){
                         $('#video').append(outputMain);
                     }
@@ -91,8 +98,6 @@ $(document).ready(function () {
                 $.each(data.items, function (i, item) {
                     $('.'+viewCountId).text(item.statistics.viewCount+' views');
                 })
-
-
             }
         );
     }
@@ -109,25 +114,22 @@ $(document).ready(function () {
 
     //output mainVid
     function mainVid(id,titl,desc,date,views) {
+
         $('#video').html(`
             <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
             <div class="wrapper">
-                <p class="title">${titl}
-
-
-                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="${date}">
-                  <i class="icon-clock"></i>a
-                </button>
-
-                <label>${views}</label>
-
-                <p>
-                <p class="text-description">${desc}<p>
+                <div class="box-tooltip"> <div class="tooltip">${date}</div>  <span class="icon-clock"></span></div>
+                <div class="box-tooltip"> <div class="tooltip views">${views}</div>  <span class="icon-view"></span></div>
+                <p class="title">${titl}</p>
+                <p class="text-description">${desc}</p>
             </div>
         `);
     }
-
-
+    $('#resultsLft').on('click', '.btn', function () {
+        alert('oi')
+        vidCount = 50;
+        getVids(playerID);
+    });
 
 
 });

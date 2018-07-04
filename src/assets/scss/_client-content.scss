@@ -14,63 +14,54 @@
 		}
 	}
 	.wrapper{
-		border: 1px solid $element-color;
-		padding: 25px;
-		@include box-shadow(0, 2px, 2px, #ccc);
 		margin: 20px 0;
+
+		.box-tooltip{
+			float: right;
+		}
 	}
 }
-.box-tooltip {
-	text-transform: uppercase;
-	background: $client-color-ng;
-	color: $text-color;
-	cursor: pointer;
-	display: inline-block;
-	position: relative;
-	margin: 0 5px;
-}
-.box-tooltip .tooltip {
-	background: $client-color-ng;
-	bottom: 100%;
-	color: $text-color;
-	border: 2px solid $element-color;
-	display: block;
-	left: -25px;
-	margin-bottom: 15px;
-	opacity: 0;
-	padding: 10px;
-	position: absolute;
-	width: max-content;
-	border-radius: 8px;
-	@include box-shadow(0, 2px, 2px, #ccc)
-	@include transition (all, 0.5s, ease)
-}
-/* This bridges the gap so you can mouse into the tooltip without it disappearing */
-.box-tooltip .tooltip:before {
-	bottom: -20px;
-	content: " ";
-	display: block;
-	height: 20px;
-	left: 0;
-	position: absolute;
-	width: 100%;
-	@include transition (all, 0.5s, ease)
 
+#results{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li{
+		padding-bottom: 20px;
+		position: relative;
+
+		.title{
+			line-height: 1.1em;
+			padding: 0;
+			margin: 0;
+		}
+		img{
+			max-width: 175px;
+			margin:0 10px 0 0;
+		}
+		.viewbottom{
+			position: absolute;
+			bottom: 20px;
+			font-family: $font-title;
+			color: $text-color-light;
+			font-weight: 600;
+			span{
+				vertical-align: top;
+			}
+			.icon-view{
+				font-size: 1.2em;
+				line-height: 1.4em;
+			}
+		}
+	}
 }
-/* CSS Triangles - see Trevor's post */
-.box-tooltip .tooltip:after {
-	border-left: solid transparent 10px;
-	border-right: solid transparent 10px;
-	border-top: solid $element-color 10px;
-	bottom: -10px;
-	content: " ";
-	height: 0;
-	left: 50%;
-	margin-left: -13px;
-	position: absolute;
-	width: 0;
-}
-.box-tooltip:hover .tooltip {
-	opacity: 1;
-	pointer-events: auto;
+
+
+@media (max-width: 1200px) {
+	#results{
+		.viewbottom{
+			position: initial!important;
+		}
+	}
 }
