@@ -1,7 +1,6 @@
 var yourApiKey = 'AIzaSyAdPfG1S6HBLhQWnKeOmFWwybir8sLBIgk'; //Jim's Key
 
 var channelName = 'VAGAStecnologia';
-var changeconst = '';
 var vidCount = 4;
 var vidHeight = 100;
 var vidWidth = 300;
@@ -36,6 +35,9 @@ $(document).ready(function () {
             function (data) {
                 var output;
                 var outputMain;
+
+                $('#results').html('');
+
                 $.each(data.items, function (i, item) {
                     console.log(item);
                     vidTitle = item.snippet.title;
@@ -79,6 +81,7 @@ $(document).ready(function () {
 
                     //append to results list
                     if (i == 0){
+                        $('#video').html('');
                         $('#video').append(outputMain);
                     }
                 })
@@ -125,10 +128,13 @@ $(document).ready(function () {
             </div>
         `);
     }
+
+    //btn add + videos on page
     $('#resultsLft').on('click', '.btn', function () {
-        alert('oi')
-        vidCount = 50;
-        getVids(playerID);
+        alert(vidCount)
+        vidCount = vidCount + 10;
+        getVids();
+
     });
 
 
