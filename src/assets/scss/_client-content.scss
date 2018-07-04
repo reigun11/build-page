@@ -21,39 +21,48 @@
 		}
 	}
 }
+#resultsLft{
 
-#results{
-	list-style: none;
-	margin: 0;
-	padding: 0;
-
-	li{
-		padding-bottom: 20px;
+	#results{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		max-height: 550px;
+		overflow: auto;
 		position: relative;
 
-		.title{
-			line-height: 1.1em;
-			padding: 0;
-			margin: 0;
-		}
-		img{
-			max-width: 175px;
-			margin:0 10px 0 0;
-		}
-		.viewbottom{
-			position: absolute;
-			bottom: 20px;
-			font-family: $font-title;
-			color: $text-color-light;
-			font-weight: 600;
-			span{
-				vertical-align: top;
+		li{
+			padding-bottom: 20px;
+			position: relative;
+
+			.title{
+				line-height: 1.1em;
+				padding: 0;
+				margin: 0;
 			}
-			.icon-view{
-				font-size: 1.2em;
-				line-height: 1.4em;
+			img{
+				max-width: 175px;
+				margin:0 10px 0 0;
+			}
+			.viewbottom{
+				position: absolute;
+				bottom: 20px;
+				font-family: $font-title;
+				color: $text-color-light;
+				font-weight: 600;
+
+				span{
+					vertical-align: top;
+				}
+				.icon-view{
+					font-size: 1.2em;
+					line-height: 1.4em;
+				}
 			}
 		}
+	}
+	.btn{
+		margin: 0;
 	}
 }
 
