@@ -27,9 +27,11 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		max-height: 550px;
+		height: 524px;
 		overflow: auto;
 		position: relative;
+		width: 100%;
+
 
 		.item{
 			padding-bottom: 20px;
@@ -77,6 +79,32 @@
 			}
 		}
 	}
+}
+
+.modal{
+	.modal-content{
+		@extend .wrapper;
+		border-radius: 0;
+		padding: 0;
+
+		.modal-header{
+			border: none;
+
+			.close{
+				color: red;
+				border-radius: 40px;
+				opacity: 1;
+				padding-bottom: 0;
+			}
+		}
+		.wrapper{
+			border: none;
+			box-shadow: none;
+		}
+	}
+}
+.modal-backdrop{
+	background-color: #fff;
 }
 
 

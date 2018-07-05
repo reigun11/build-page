@@ -52,6 +52,10 @@ $radius:            4px;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-close:before {
+  content: "\e906";
+}
+
 .icon-play:before {
   content: "\e904";
 }

@@ -16,11 +16,11 @@
       <header id="nav">
         <div class="container">
           <nav class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand mr-auto" href="#">
+          <a class="navbar-brand mr-auto" href="index.html">
               <h1><img src="images/logo_page.png" class="empresa img-fluid"><span class="d-none d-md-block">Fictícia Videos</span> </h1>
           </a>
           <form class="form-inline mr-sm-2 my-lg-0 search">
-            <input class="form-control mr-sm-2 search" type="search">
+            <input class="form-control mr-sm-2 search" type="search" onclick="goToPage();">
                 <i class="icon-search text-white"></i>
             </a>
           </form>
@@ -45,7 +45,7 @@
                 <h2>Todos os vídeos do Canal</h2>
             </div>
               <div id="results">
-                  <div class="frameborder row" data-key="col-lg-4 col-sm-6"></div>
+                  <div class="frameborder row list_filtro_cargos" data-key="col-lg-4 col-md-6" data-toggle="modal" data-target="#exampleModal"></div>
               </div>
               <div class="col-md-4">
                   <button type="button" class="btn btn-block btn-outline-secondary" data-key="loadMoreVideos">Carregar mais videos...</button>
@@ -53,5 +53,22 @@
           </div>
       </main>
     <script src="js/scripts.js"></script>
+
+
+    <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                <i class="icon-close close" data-dismiss="modal" aria-label="Close"> </i>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div id="video"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </body>
 </html>
