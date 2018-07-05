@@ -143,13 +143,17 @@ $(document).ready(function() {
 
     });
 
+    //watch page video and show number of videos
     if ($('#resultsVids').length){
         var vidCount = 9;
-
-        //watch page video and show number of videos
         if (window.location.hash) {
         var  vidCount = 50;
         }
+    }
+
+    //watch page video and show number of videos
+    if ($('#resultsLft').length){
+        var vidCount = 4;
     }
 
     //btn add videos on page video
@@ -158,6 +162,11 @@ $(document).ready(function() {
         getVids();
     });
 
+    $('.search').keydown(function(e) {
+    if (e.which === 13) {
+        window.location.href= "/'#'+searchTerm;"
+        }
+    });
 
 
 });
