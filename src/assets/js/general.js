@@ -162,9 +162,11 @@ $(document).ready(function() {
         getVids();
     });
 
-    $('.search').keydown(function(e) {
-    if (e.which === 13) {
-        window.location.href= "/'#'+searchTerm;"
+    //btn add videos on page video
+    $('#myInput').keydown(function(e) {
+        if (e.which === 13) {
+            window.location.href = 'videos.html#'+$('#myInput').val();
+            location.reload();
         }
     });
 
